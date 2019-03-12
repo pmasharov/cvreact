@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import avatar from '../img/avatar.png'
 
-export default class Avatar extends PureComponent {
+export default class Avatar extends Component {
     avatarRenderer = () => {
         const { width, height, border, background, avatarImg, alt } = this.props;
         return (
@@ -25,7 +25,7 @@ export default class Avatar extends PureComponent {
 Avatar.defaultProps = {
     width: 50 + "%",
     height: 50 + "%",
-    border: "solid 2px blue",
+    border: "solid 2px #2395f3",
     background: "transparent",
     avatarImg: avatar,
     alt: "Avatar"

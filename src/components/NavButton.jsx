@@ -1,19 +1,21 @@
-import React, { PureComponent } from 'react';
-
-export default class NavButton extends PureComponent {
+import React, { Component } from 'react'
+export default class NavButton extends Component {
+    handleClick = (e) => {
+        console.log(this)
+    }
     navButtonRenderer = (button) => {
-        const {label, width, height, border, background, borderRadius } = this.props;
-        console.log('label in NavButton: ', label)
+        const { label, width, height, border, background, borderRadius } = this.props;
         return (
-            <button style={{
-                width: width,
-                height: height,
-                border: border,
-                borderRadius: borderRadius,
-                background: background,
-                label: label
-            }}>
-            {label}
+            <button onClick={this.handleClick}
+                style={{
+                    width: width,
+                    height: height,
+                    border: border,
+                    borderRadius: borderRadius,
+                    background: background,
+                    label: label
+                }}>
+                {label}
             </button>
         )
     }

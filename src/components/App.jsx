@@ -7,16 +7,17 @@ import Education from './Education';
 import Experience from './Experience';
 import Portfolio from './Portfolio';
 import Contacts from './Contacts';
+import { Link } from 'react-router-dom'
 
 class App extends Component {
     render() {
         return (
             <div>
                 <Avatar />
-                <NavPanel />
                 <BrowserRouter>
                     <Switch>
-                        <Route exact path="/skills" component={Skills} />
+                        <Route exact path="/" component={NavPanel} />
+                        <Route path="/skills" component={Skills} />
                         <Route path="/education" component={Education} />
                         <Route path="/experience" component={Experience} />
                         <Route path="/portfolio" component={Portfolio} />
