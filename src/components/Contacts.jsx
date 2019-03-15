@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import NavPanel from './NavPanel'
+import ContactForm from './ContactForm'
+import '../css/Contacts.sass'
 
 export default class Contacts extends Component {
 
@@ -7,7 +9,7 @@ export default class Contacts extends Component {
         return (
             <div>
                 <NavPanel />
-                Contacts
+                <ContactForm/>
             </div>
         )
     }

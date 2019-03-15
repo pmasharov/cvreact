@@ -1,65 +1,108 @@
 import React, { Component } from 'react';
-import NavButton from './NavButton'
 import Avatar from './Avatar'
 import { Link } from 'react-router-dom'
+import '../css/NavPanel.sass'
+// import { withRouter } from 'react-router';
+// import { connect } from 'react-redux'
+// import { activateLink } from '../redux/countersAC'
 
-export default class NavPanel extends Component {
 
-    createButtonItem(buttons) {
+class NavPanel extends Component {
+    constructor() {
+        super()
+        this.state = {
+            activeButton: null
+        }
+    }
+    makeConsLog = (label) => {
+        return (
+            <section>
+                <span className="class_text">console</span>
+                <span className="bracket_text">.</span>
+                <span className="method_text">log</span>
+                <span className="bracket_text">(</span>
+                <span className="string_text">"{label}"</span>
+                <span className="bracket_text">)</span>
+            </section>
+        )
+    }
+    createButtonItem(buttons, classes) {
         return buttons.map((button) => {
             const { id, label, path } = button
+            const buttonClasses = classes.join(' ')
+            const makeConsLog = this.makeConsLog(label)
             return (
-                <Link to={{ pathname: path }}>
-                    <NavButton path={path} key={id} label={label} />
+                <Link
+                    to={{ pathname: path }}
+                    path={path}
+                    className={(this.state.activeButton !== id) ? buttonClasses : buttonClasses + ' navPanel_navLink__active'}
+                    key={id}
+                    onClick={() => { }} >
+                    {makeConsLog}
                 </Link>
             )
         })
     }
     navPanelRenderer = () => {
-        const { buttons, border } = this.props
-        const buttonItems = this.createButtonItem(buttons)
+        const { buttons, buttonClasses } = this.props
+        const classes = this.props.classes.join(' ')
+        const buttonItems = this.createButtonItem(buttons, buttonClasses)
         return (
-            <nav style={{ border: border }}>
-                {buttonItems}
+            <nav className={classes}>
+                <Avatar />
+                <section>
+                    {buttonItems}
+                </section>
             </nav>
         )
     }
     render() {
         const renderer = this.navPanelRenderer()
-        return (
-            <Avatar /> ,
-            renderer
-        )
+        return renderer
     }
 }
 
 NavPanel.defaultProps = {
-    border: "solid 2px red",
+    classes: [
+        'navPanel'
+    ],
     buttons: [
         {
             id: 1,
-            label: 'Навыки',
+            label: 'Skills',
             path: '/skills'
         },
         {
             id: 2,
-            label: 'Образование',
+            label: 'Education',
             path: '/education'
         },
         {
             id: 3,
-            label: 'Опыт работы',
+            label: 'Experience',
             path: '/experience'
         },
         {
             id: 4,
-            label: 'Портфолио',
+            label: 'Portfolio',
             path: '/portfolio'
         },
         {
             id: 5,
-            label: 'Контакты',
+            label: 'Contacts',
             path: '/contacts'
         }
+    ],
+    buttonClasses: [
+        'navPanel_navLink'
     ]
 }
+
+
+export default NavPanel
+// const mapStateToProps = function (state) {
+//     return {
+//         store: state.store,
+//     };
+// };
+// export default connect(mapStateToProps)(NavPanel);

@@ -1,0 +1,21 @@
+@import App
+    
+.navPanel
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    background: $primary_background_color
+    padding: 0 0 5rem
+
+    .navPanel_navLink
+        display: block
+        text-align: left
+        line-height: 3rem
+        padding: 0 1rem
+        // border: solid 1px $primary_border_color
+
+    .navPanel_navLink__active
+        transform: rotatex(90deg)
+        transform-origin: 50% 100%
+
+    

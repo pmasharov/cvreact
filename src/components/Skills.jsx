@@ -12,9 +12,3 @@ export default class Skills extends Component {
         )
     }
 }
-
-Skills.defaultProps = {
-    skills: [
-
-    ]
-}

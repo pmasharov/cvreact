@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import avatar from '../img/avatar.png'
+import '../css/Avatar.sass'
 
 export default class Avatar extends Component {
     avatarRenderer = () => {
-        const { width, height, border, background, avatarImg, alt } = this.props;
+        const { containerClasses, avatarImg, alt } = this.props;
+        const imgClasses = this.props.imgClasses.join(' ')
         return (
-            <div style={{
-                width: width,
-                height: height,
-                border: border,
-                background: background,
-                alt: alt
-            }}>
-                <img src={avatarImg} alt={alt} />
+            <div className={containerClasses}>
+                <img className={imgClasses} src={avatarImg} alt={alt} />
             </div>
         )
     }
@@ -23,10 +19,12 @@ export default class Avatar extends Component {
 }
 
 Avatar.defaultProps = {
-    width: 50 + "%",
-    height: 50 + "%",
-    border: "solid 2px #2395f3",
-    background: "transparent",
+    imgClasses: [
+        'circle',
+        'avatar',
+        'light'
+    ],
+    containerClasses: 'avatar_container',
     avatarImg: avatar,
     alt: "Avatar"
 }

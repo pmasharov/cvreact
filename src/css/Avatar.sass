@@ -1,0 +1,39 @@
+@import App
+
+.avatar_container
+    width: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $primary_background_color
+    padding: 3rem 0 1rem
+
+    .avatar
+        width: 10rem
+        border: solid .1rem $primary_border_color
+        box-shadow: 0 0 15px $primary_border_color
+
+    
+        
+.circle
+    border-radius: 50%
+// .light
+//     animation: show 1s 1 linear
+
+
+@keyframes show
+  0%
+    opacity: 0
+  30% 
+    opacity: .3
+  100% 
+    opacity: 1
+
+@keyframes transform
+  0%
+    border-radius: 20% 30% 70% 30% 
+  50%
+    border-radius: 50%
+  100% 
+    border-radius: 20% 30% 70% 30%
+    
