@@ -19,9 +19,10 @@ import '../css/App.sass';
 class App extends Component {
     render() {
         return (
-            <section>
-                <BrowserRouter>
-                    {/* <Provider store={store}> */}
+            <section className='wrapper'>
+                <section className='fix'>
+                    <BrowserRouter>
+                        {/* <Provider store={store}> */}
                         <Switch>
                             <Route exact path="/" render={(props) => <NavPanel props={props} />} />
                             <Route path="/skills" component={Skills} />
@@ -30,8 +31,9 @@ class App extends Component {
                             <Route path="/portfolio" component={Portfolio} />
                             <Route path="/contacts" component={Contacts} />
                         </Switch>
-                    {/* </Provider> */}
-                </BrowserRouter>
+                        {/* </Provider> */}
+                    </BrowserRouter>
+                </section>
             </section>
         )
     }
