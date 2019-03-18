@@ -6,7 +6,8 @@ $string_color: rgb(194, 123, 76)
 $class_color: rgb(91, 200, 175)
 $bracket_color: rgb(255, 255, 255)
 $code_color: rgb(141, 213, 246)
-$primary_background_color: rgb(35, 35, 35)
+$background_color__middle: rgb(35, 35, 35)
+$background_color__dark: rgb(30, 30, 30)
 $border_color: rgb(68, 119, 206)
 $primary_transition: .3s ease-in
 $primary_block_padding: .5rem
@@ -19,10 +20,11 @@ $primary_h1_padding: 1rem .5rem
 body
     display: flex
     justify-content: center
-    background: $primary_background_color
+    background: $background_color__middle
 .fix
     display: flex
-    max-width: 45rem
+    max-width: 40rem
+    margin: 0 3rem
 h1
     font-size: 2rem
 a, a *

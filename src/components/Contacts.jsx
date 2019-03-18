@@ -25,7 +25,6 @@ export default class ContactForm extends Component {
     }
     makePhone = (props) => {
         return (
-            
             <section className={props.classes.inline_block}>
                 <span> +{props.phone.pref}</span>
                 <span>(</span>
@@ -66,12 +65,6 @@ export default class ContactForm extends Component {
                     <a target='_blank' rel="noopener noreferrer" href={github}>{githubElem}</a>
                     <a href={phoneHref}>{phoneElem}</a>
                 </section>
-                {/* <form action={actionPath}>
-                    <input className='input_active' type="text" placeholder='name *' required />
-                    <input type="email" placeholder='emial *' required />
-                    <input type="text" placeholder='subject' />
-                    <textarea rows='5' placeholder='message' style={{ resize: 'none' }} />
-                </form> */}
             </section>
         )
     }

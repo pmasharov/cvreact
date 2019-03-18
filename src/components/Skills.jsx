@@ -21,9 +21,8 @@ export default class Skills extends Component {
         return (
             <div>
                 <NavPanel />
-                <section style={{
-                    background: "black"
-                }}>
+                <section className=''>
+                <h1>Skills</h1>
                     {skillsList}
                 </section>
             </div>

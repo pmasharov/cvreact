@@ -5,7 +5,7 @@
     display: flex
     justify-content: center
     align-items: center
-    background: $primary_background_color
+    background: $background_color__middle
     padding: 3rem 1rem
 
     .avatar
@@ -13,8 +13,26 @@
         border: solid .1rem $border_color
         box-shadow: 0 0 15px $border_color
 
-    
+    // .avatar:after
+    //     content: ""
+    //     display: block
+    //     position: absolute
+    //     width: 268.8px
+    //     height: 268.8px
+    //     top: -22.4px
+    //     left: -22.4px
+    //     border-radius: 50%
+    //     transition: all .5s
+
+
+    // .avatar:hover:after
+    //     animation: rotate 2s linear infinite
+    //     box-shadow: -14.56px -14.56px 0 0 rgba(255,0,0,.3), -20.384px 0 0 0 rgba(255,170,0,.3), -14.56px 14.56px 0 0 rgba(170,255,0,.3), 0 20.384px 0 0 rgba(0,255,0,.3), 14.56px 14.56px 0 0 rgba(0,255,170,.3), 20.384px 0 0 0 rgba(0,170,255,.3), 14.56px -14.56px 0 0 rgba(0,0,255,.3), 0 -20.384px 0 0 rgba(170,0,255,.3);
         
+
+
+
+
 .circle
     border-radius: 50%
 // .light
@@ -36,4 +54,10 @@
     border-radius: 50%
   100% 
     border-radius: 20% 30% 70% 30%
+
+@keyframes rotate
+  0 
+    transform: rotate(1deg)
+  100% 
+    transform: rotate(360deg)
     
