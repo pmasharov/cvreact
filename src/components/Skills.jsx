@@ -1,19 +1,18 @@
 import React, { Component } from 'react'
 import NavPanel from './NavPanel'
 import '../css/Skills.sass'
+import { classes, joinClasses } from '../js/classes'
+import { types } from '../js/types'
 
 export default class Skills extends Component {
 
     makeSkillItem = (props) => {
-        return props.skills.map((skill) => {
-            return (
-                <skill>
-                    <strong>
-                        {skill.name}
-                    </strong>
-                </skill>
+        const { skills, classes, types } = props
+        const skillsList = (skillsArr) =>
+            skillsArr.map((skill, i) =>
+                React.createElement(types.strong, { key: i, className: classes.skillClasses }, skill.name)
             )
-        })
+        return skillsList(skills)
     }
 
     render() {
@@ -22,7 +21,7 @@ export default class Skills extends Component {
             <div>
                 <NavPanel />
                 <section className=''>
-                <h1>Skills</h1>
+                    <h1>Skills</h1>
                     {skillsList}
                 </section>
             </div>
@@ -42,5 +41,8 @@ Skills.defaultProps = {
         { name: 'REST' },
         { name: 'Github' },
         { name: 'Canvas' }
-    ]
+    ],
+    classes: classes,
+    types: types
+
 }

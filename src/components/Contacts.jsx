@@ -60,7 +60,7 @@ export default class ContactForm extends Component {
                 <h1>Contacts</h1>
                 <section>
                     <a target='_blank' rel="noopener noreferrer" href={addressLink}>{addressElem}</a>
-                    <a target='_blank' rel="noopener noreferrer" href={emailHref}>{emailElem}</a>
+                    <a rel="noopener noreferrer" href={emailHref}>{emailElem}</a>
                     <a target='_blank' rel="noopener noreferrer" href={linkedin}>{linkedinElem}</a>
                     <a target='_blank' rel="noopener noreferrer" href={github}>{githubElem}</a>
                     <a href={phoneHref}>{phoneElem}</a>
