@@ -5,19 +5,22 @@ import { classes, joinClasses } from '../js/classes'
 import { types } from '../js/types'
 
 export default class Avatar extends Component {
+
     avatarRenderer = (props) => {
         const { avatarClasses, avatarContainerClasses, avatarImg, alt } = props
         const avatar = () => {
-            React.createElement(types.section, {className: avatarContainerClasses}, () =>
-                React.createElement(types.img, {className: avatarClasses })
+            return (
+                React.createElement(types.section, { className: avatarContainerClasses },
+                    (() => React.createElement(types.img, { className: avatarClasses, src: avatarImg, alt: alt })
+                    )()
+                )
             )
         }
         return (
-            <div className={avatarContainerClasses}>
-                <img className={avatarClasses} src={avatarImg} alt={alt} />
-            </div>
+            avatar()
         )
     }
+
     render() {
         const renderer = this.avatarRenderer(this.props)
         return renderer

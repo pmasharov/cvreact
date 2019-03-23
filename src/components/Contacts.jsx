@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NavPanel from './NavPanel'
+import { classes, joinClasses } from '../js/classes'
 import '../css/Contacts.sass'
 
 export default class ContactForm extends Component {
@@ -71,15 +72,7 @@ export default class ContactForm extends Component {
 }
 
 ContactForm.defaultProps = {
-    classes: {
-        method_text: 'method_text',
-        string_text: 'string_text',
-        comment_text: 'comment_text',
-        bracket_text: 'bracket_text',
-        tag_text: 'tag_text',
-        code_text: 'code_text',
-        inline_block: 'inline_block'
-    },
+    classes: classes,
     phone: {
         pref: '375',
         code: '29',

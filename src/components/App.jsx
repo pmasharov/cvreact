@@ -13,7 +13,6 @@ import '../css/App.sass';
 // import { createStore } from 'redux';
 // import { Provider } from 'react-redux';
 // import combinedReducer from '../redux/reducers';
-
 // let store = createStore(combinedReducer);
 
 class App extends Component {
