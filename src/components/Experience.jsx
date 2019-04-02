@@ -11,8 +11,12 @@ export default class Experience extends Component {
                 const skillsString = experience.skills.join(', ')
                 return (
                     <section key={i}>
-                        <h2 className={classes.return_text} key={i}>{experience.name}</h2>
+                        <h2 className={classes.class_text} key={i}>{experience.name}</h2>
                         <span className={classes.bracket_text}>&#123; </span>
+                        <br />
+                        <span className={joinClasses([classes.code_text, ...classes.prop_margin])}>position: </span>
+                        <span className={joinClasses([classes.return_text, ...classes.prop_margin])}>{experience.position}</span>
+                        <span className={joinClasses([classes.comment_text, ...classes.prop_margin])}>{(experience.direction)?`//${experience.direction}`:null}</span>
                         <br />
                         <span className={joinClasses([classes.code_text, ...classes.prop_margin])}>from: </span>
                         <span className={classes.tag_text}>new </span>
@@ -34,8 +38,6 @@ export default class Experience extends Component {
                         <span className={classes.string_text}>&#96;{skillsString}&#96;</span>
                         <br />
                         <span className={classes.bracket_text}>&#125; </span>
-                        <br />
-                        <br />
                         <br />
                     </section>
                 )
@@ -62,6 +64,8 @@ Experience.defaultProps = {
     experienceArr: [
         {
             name: 'LLC AROBOT',
+            position: 'Front-end developer',
+            direction: 'Javascript, React.js',
             from: '12.2018',
             to: '03.2019',
             skills: [
@@ -81,6 +85,7 @@ Experience.defaultProps = {
         },
         {
             name: 'AC Hight Technology Park',
+            position: 'Student',
             from: '',
             to: '',
             skills: [
@@ -97,6 +102,7 @@ Experience.defaultProps = {
         },
         {
             name: 'AC Hight Technology Park',
+            position: 'Student',
             from: '',
             to: '',
             skills: [

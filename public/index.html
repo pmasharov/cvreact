@@ -3,10 +3,8 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="theme-color" content="#000000" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <title>React App</title>
 </head>
 
@@ -14,29 +12,6 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <script>
-
-    const isPal = (string) => {
-      return string.toLowerCase() === string.toLowerCase().split('').reverse().join('')
-    }
-
-    const sortArr = (array) => {
-      let result = array.sort((a, b) => {
-        return a > 0
-      })
-      return result
-    }
-
-    const filterArr = (array) => {
-      arr0 = []
-      arrN = []
-      array.filter((elem) => {
-        if (elem > 0) arrN.push(elem)
-        else arr0.push(elem)
-      })
-      return (
-        [...arrN, ...arr0]
-      )
-    }
 
   </script>
 </body>

@@ -21,7 +21,15 @@ export default class Avatar extends Component {
         )
     }
 
+
+componentWillRecMount(){console.log('willMount')}
+componentWillMount(){console.log('willMount')}
+componentDidMount(){console.log('didMount')}
+
+
+
     render() {
+        console.log('render')
         const renderer = this.avatarRenderer(this.props)
         return renderer
     }
